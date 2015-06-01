@@ -1,0 +1,33 @@
+- przeksztalcamy wspolrzedne globalne do wsporzednych kamery
+- wspolrzedne globalne sa uaktualniane na bierzaco na podstawie
+  nie zalerznych wspolrzendych lokalnych
+- wspolrzedne globalne transformujemy do wspolrzednych kamery 
+  tak aby nie naruszyc infomracji o niezaleznych wspolrzednych globalnych
+  przedstawianego obiektu 3d znajdujacego sie na scenie.
+
+
+Jak przeksztalcic wspolrzedne globalne do wspolrzednych kamery nie naruszajac wspolrzednych globalnych ??
+
+
+wspolrzedne kamery = wspolrzedne globalne * macierz przeksztalcenia widoku kamery (przesuniecie + obroty)
+
+ogolne zalozenia:
+
+	- Wspolrzedne widoku musza byc generowane od pierwszej klatki
+
+	- wspolrzedne widoku musze byc generowane dla kazdej klatki 
+	  na podstawie aktualnych wspolrzednych globalnych 
+
+
+
+
+	Potok:
+
+	1.Przeksztalcenia na wspolrzednych lokalnych
+	2.Przesuniecie lokalnych obiektów do przestrzeni globalnej (swiata/sceny)
+	3.Przekszta³cenia na wspolrzednych globalnych
+	4.Przeksztalcenie do wspolrzednych widoku - obserwatora
+	5.Usuwanie obiektów le¿¹cych poza ostroslupem widzenia
+	6.Usuwanie powierzchni zwrocoych tylemdo obserwatora.
+	7.Rzut perspektywiczny na plaszczyzne
+	8.Rasteryzacja trójk¹tów ? wypranym kolorem poprzez algorytmy cieniowania.
